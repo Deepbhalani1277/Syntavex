@@ -51,7 +51,10 @@ build/
 .netlify
 
 # Agent and Local Tooling
+.agent/
+.agent
 .agents/
+.agents
 skills-lock.json
 .gemini/
 .antigravity/
