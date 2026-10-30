@@ -1,0 +1,21 @@
+{
+  "name": "syntavex",
+  "version": "1.0.0",
+  "description": "Syntavex — Production-Grade AI Systems & Engineering",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "llm",
+    "engineering"
+  ],
+  "author": "Syntavex Technologies",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syntavex | Production-Grade AI Systems & Engineering</title>
+  <meta name="description" content="Syntavex engineers autonomous AI agents, intelligent workflow automation, and scalable software systems for high-velocity startups. Built for production rigor.">
+  <meta name="keywords" content="AI engineering studio, autonomous agents, LLM applications, AI workflow automation, RAG systems, startup AI development, Syntavex">
+  <meta name="author" content="Syntavex Technologies">
+  <meta name="theme-color" content="#090A0F">
+  <link rel="canonical" href="https://syntavex.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://syntavex.com/">
+  <meta property="og:title" content="Syntavex | Production-Grade AI Systems & Engineering">
+  <meta property="og:description" content="Turning complex AI into unfair competitive advantages for startups. Autonomous agents, intelligent pipelines, and production systems.">
+  <meta property="og:image" content="/assets/favicon.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Syntavex | Production-Grade AI Systems & Engineering">
+  <meta name="twitter:description" content="Turning complex AI into unfair competitive advantages for startups. Autonomous agents, intelligent pipelines, and production systems.">
+  <meta name="twitter:image" content="/assets/favicon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <!-- Typography: Preconnect for fast loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <!-- Interactive Neural / Constellation Background Canvas -->
+  <canvas id="neural-canvas" class="neural-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Animated Glowing Mesh Orbs -->
+  <div class="ambient-mesh" aria-hidden="true">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header id="navbar" class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-link" aria-label="Syntavex Home">
+        <img src="/assets/favicon.svg" alt="Syntavex Logo" class="brand-logo" width="32" height="32">
+        <span class="brand-name">Syntavex</span>
+      </a>
+
+      <nav class="nav-links" id="primary-nav" aria-label="Main Navigation">
+        <a href="#capabilities" class="nav-link">Capabilities</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#stack" class="nav-link">Ecosystem</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#labs" class="nav-link">Labs</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-accent" id="nav-contact-btn">Initiate Project</a>
+        <button type="button" class="mobile-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Live Agent Terminal -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-layout">
+        <!-- Hero Text Column -->
+        <div class="hero-text-col">
+          <div class="status-badge" role="status">
+            <span class="status-pulse" aria-hidden="true"></span>
+            <span class="status-text">Available for select Q4/Q1 engineering engagements</span>
+          </div>
+
+          <h1 class="hero-headline">Turning complex AI into unfair competitive advantages for startups</h1>
+
+          <p class="hero-subtext">
+            We engineer autonomous multi-agent systems, deterministic RAG pipelines, and high-throughput software architectures designed for speed, resilience, and real-world scale.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-lg btn-accent" id="hero-primary-cta">Initiate Project</a>
+            <a href="#architecture" class="btn btn-lg btn-outline" id="hero-secondary-cta">Explore Architecture</a>
+          </div>
+
+          <div class="hero-standards" aria-label="Engineering Standards">
+            <div class="standard-pill">
+              <span class="pill-dot"></span>
+              <span>Deterministic State Graphs</span>
+            </div>
+            <div class="standard-pill">
+              <span class="pill-dot"></span>
+              <span>Continuous Evaluation Loops</span>
+            </div>
+            <div class="standard-pill">
+              <span class="pill-dot"></span>
+              <span>Strict Zero-Leakage Privacy</span>
+            </div>
+            <div class="standard-pill">
+              <span class="pill-dot"></span>
+              <span>Sub-Second Streaming Latency</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Live Agent Terminal -->
+        <div class="hero-terminal-col">
+          <div class="terminal-card" id="agent-terminal">
+            <div class="terminal-topbar">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="terminal-title">syntavex-agent-runtime &mdash; active orchestration</div>
+              <div class="terminal-live-badge">
+                <span class="live-dot"></span> LIVE
+              </div>
+            </div>
+
+            <div class="terminal-screen" id="terminal-screen" aria-live="polite">
+              <!-- Animated Log Stream -->
+            </div>
+
+            <div class="terminal-footer">
+              <div class="terminal-metrics">
+                <span class="metric-label">Latency:</span> <span class="metric-val" id="metric-latency">42ms</span>
+                <span class="metric-divider">|</span>
+                <span class="metric-label">Eval Relevancy:</span> <span class="metric-val text-green">0.994</span>
+              </div>
+              <button type="button" class="terminal-action-btn" id="trigger-agent-btn" title="Simulate multi-agent cycle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Run Cycle
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities / Services Matrix -->
+    <section id="capabilities" class="section capabilities-section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Core Capabilities</span>
+          <h2 class="section-title">Production systems engineered from first principles</h2>
+          <p class="section-desc">Moving beyond fragile prototypes and basic wrappers to build resilient, self-correcting AI infrastructure that scales with your business.</p>
+        </div>
+
+        <div class="capabilities-grid">
+          <!-- Card 1 -->
+          <article class="capability-card spotlight-card" id="capability-agents">
+            <div class="card-indicator" aria-hidden="true">01</div>
+            <h3 class="card-title">Autonomous AI Agents & Workflows</h3>
+            <p class="card-desc">
+              State-driven multi-agent architectures that plan, reason, invoke external tools, and self-correct across complex multi-step tasks without drifting into infinite loops.
+            </p>
+            <div class="tech-tags" aria-label="Technology focus">
+              <span class="tech-tag">LangGraph</span>
+              <span class="tech-tag">State Machines</span>
+              <span class="tech-tag">Tool Orchestration</span>
+              <span class="tech-tag">Dynamic Routing</span>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="capability-card spotlight-card" id="capability-automation">
+            <div class="card-indicator" aria-hidden="true">02</div>
+            <h3 class="card-title">Intelligent Automation & Semantic ETL</h3>
+            <p class="card-desc">
+              High-accuracy data extraction pipelines converting raw documents, unstructured emails, and database records into clean structured entities with automated schema validation.
+            </p>
+            <div class="tech-tags" aria-label="Technology focus">
+              <span class="tech-tag">Hybrid RAG</span>
+              <span class="tech-tag">Vector Stores</span>
+              <span class="tech-tag">Cross-Encoder Re-ranking</span>
+              <span class="tech-tag">Schema Enforcement</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="capability-card spotlight-card" id="capability-infra">
+            <div class="card-indicator" aria-hidden="true">03</div>
+            <h3 class="card-title">Custom Software & AI Infrastructure</h3>
+            <p class="card-desc">
+              High-concurrency API microservices, token-streamed user interfaces, and observable serving environments hardened for enterprise security and rapid horizontal scale.
+            </p>
+            <div class="tech-tags" aria-label="Technology focus">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Next.js / TypeScript</span>
+              <span class="tech-tag">Docker Containerization</span>
+              <span class="tech-tag">Telemetry & Evals</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & Engineering Rigor -->
+    <section id="architecture" class="section architecture-section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Engineering Rigor</span>
+          <h2 class="section-title">Why Syntavex architectures succeed in production</h2>
+          <p class="section-desc">The difference between a demo and production software is how the system handles uncertainty, latency, and edge cases.</p>
+        </div>
+
+        <div class="architecture-grid">
+          <div class="arch-box spotlight-card">
+            <div class="arch-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="arch-title">Deterministic State Boundaries</h3>
+            <p class="arch-text">
+              Every agent execution operates within strict cycle limits, structured output schemas, and fallback procedures to guarantee predictable costs and reliable outcomes.
+            </p>
+          </div>
+
+          <div class="arch-box spotlight-card">
+            <div class="arch-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h3 class="arch-title">Continuous Evaluation Loops</h3>
+            <p class="arch-text">
+              Automated evaluation datasets benchmark retrieval accuracy, answer relevancy, and hallucination metrics on every prompt modification or model version upgrade.
+            </p>
+          </div>
+
+          <div class="arch-box spotlight-card">
+            <div class="arch-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="arch-title">Zero-Leakage Data Privacy</h3>
+            <p class="arch-text">
+              Strict isolation of proprietary contextual data, zero cross-tenant contamination, robust prompt injection defenses, and sanitized egress boundaries.
+            </p>
+          </div>
+
+          <div class="arch-box spotlight-card">
+            <div class="arch-icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="arch-title">Low-Latency Streaming Execution</h3>
+            <p class="arch-text">
+              Asynchronous token streaming, parallel tool dispatches, and intelligent vector caching deliver responsive experiences that keep users engaged.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Ecosystem -->
+    <section id="stack" class="section stack-section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Technology Ecosystem</span>
+          <h2 class="section-title">Built with modern, production-proven frameworks</h2>
+          <p class="section-desc">We select technologies based on stability, developer ergonomics, and benchmarked performance under load.</p>
+        </div>
+
+        <div class="stack-categories">
+          <div class="stack-group">
+            <h3 class="stack-group-title">AI & Model Runtimes</h3>
+            <div class="stack-chips">
+              <span class="stack-chip">Python 3.11+</span>
+              <span class="stack-chip">PyTorch</span>
+              <span class="stack-chip">Hugging Face</span>
+              <span class="stack-chip">OpenAI / Anthropic APIs</span>
+              <span class="stack-chip">Ollama / vLLM</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <h3 class="stack-group-title">Orchestration & Agent Frameworks</h3>
+            <div class="stack-chips">
+              <span class="stack-chip">LangGraph</span>
+              <span class="stack-chip">LlamaIndex</span>
+              <span class="stack-chip">Pydantic v2</span>
+              <span class="stack-chip">Instructor</span>
+              <span class="stack-chip">LangChain</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <h3 class="stack-group-title">Data & Vector Retrieval</h3>
+            <div class="stack-chips">
+              <span class="stack-chip">PostgreSQL / pgvector</span>
+              <span class="stack-chip">Qdrant</span>
+              <span class="stack-chip">Pinecone</span>
+              <span class="stack-chip">Redis Cache</span>
+            </div>
+          </div>
+
+          <div class="stack-group">
+            <h3 class="stack-group-title">Full-Stack & Cloud Deployment</h3>
+            <div class="stack-chips">
+              <span class="stack-chip">FastAPI</span>
+              <span class="stack-chip">TypeScript</span>
+              <span class="stack-chip">Docker</span>
+              <span class="stack-chip">Heroku Platform</span>
+              <span class="stack-chip">Cloudflare Edge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process / How We Work -->
+    <section id="process" class="section process-section reveal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Delivery Framework</span>
+          <h2 class="section-title">Zero bureaucracy. Pure engineering velocity.</h2>
+          <p class="section-desc">A predictable 3-step delivery cycle designed to move from concept to working software rapidly.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step spotlight-card">
+            <div class="step-badge">Phase 01</div>
+            <h3 class="step-title">Architecture & Scope Blueprint</h3>
+            <p class="step-desc">
+              We define clear data contracts, evaluate LLM requirements, select optimal vector strategies, and formulate a concrete technical roadmap.
+            </p>
+          </div>
+
+          <div class="process-step spotlight-card">
+            <div class="step-badge">Phase 02</div>
+            <h3 class="step-title">Rapid Build & Iterative Sprints</h3>
+            <p class="step-desc">
+              Weekly deliverables with live staging environments, continuous automated evals, and transparent code visibility from day one.
+            </p>
+          </div>
+
+          <div class="process-step spotlight-card">
+            <div class="step-badge">Phase 03</div>
+            <h3 class="step-title">Production Handoff & Hardening</h3>
+            <p class="step-desc">
+              Comprehensive telemetry, load testing, latency optimization, security auditing, and documentation handoff for complete independence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Syntavex Labs (R&D Teaser) -->
+    <section id="labs" class="section labs-section reveal">
+      <div class="container">
+        <div class="labs-card spotlight-card">
+          <div class="labs-header">
+            <span class="labs-tag">Internal R&D</span>
+            <span class="labs-status">● In Active Development</span>
+          </div>
+
+          <h2 class="labs-title">Syntavex Labs</h2>
+          <p class="labs-desc">
+            Beyond client engineering, we actively build and open-source proprietary developer tools and autonomous agents to push the frontiers of what AI systems can do.
+          </p>
+
+          <div class="labs-projects">
+            <div class="project-item">
+              <div class="project-header">
+                <span class="project-name">Project Nexus</span>
+                <span class="project-badge">Agentic DevTools</span>
+              </div>
+              <p class="project-text">Autonomous code review, AST static analysis, and multi-file architecture auditing agent.</p>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <span class="project-name">SynthaRAG</span>
+                <span class="project-badge">Retrieval Engine</span>
+              </div>
+              <p class="project-text">Ultra-low latency hybrid search pipeline with integrated cross-encoder re-ranking for enterprise docs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversion & Contact Section -->
+    <section id="contact" class="section contact-section reveal">
+      <div class="container contact-container">
+        <div class="contact-box spotlight-card">
+          <span class="section-label">Initiate an Engagement</span>
+          <h2 class="contact-title">Let’s discuss your AI architecture</h2>
+          <p class="contact-desc">
+            Whether you are launching a new AI product, automating complex workflows, or seeking engineering leadership, we are ready to build.
+          </p>
+
+          <div class="email-display-card">
+            <div class="email-details">
+              <span class="email-label">Direct Communication Channel</span>
+              <a href="mailto:contact@syntavex.com?subject=Syntavex%20Engineering%20Inquiry" class="email-address" id="main-email-link">contact@syntavex.com</a>
+            </div>
+
+            <div class="email-actions">
+              <button type="button" class="btn btn-md btn-accent" id="copy-email-btn" aria-label="Copy email address to clipboard">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copy-btn-text">Copy Address</span>
+              </button>
+
+              <a href="mailto:contact@syntavex.com?subject=Syntavex%20Engineering%20Inquiry" class="btn btn-md btn-outline" id="send-email-btn">
+                <span>Send Direct Email</span>
+              </a>
+            </div>
+          </div>
+
+          <p class="contact-commitment">
+            All inquiries receive a direct response from our lead engineer within 24 hours. Zero sales spam.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#hero" class="brand-link" aria-label="Syntavex Home">
+          <img src="/assets/favicon.svg" alt="Syntavex Logo" width="24" height="24">
+          <span class="brand-name">Syntavex</span>
+        </a>
+        <p class="footer-tagline">Turning complex AI into unfair competitive advantages for startups.</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#stack">Ecosystem</a>
+        <a href="#process">Process</a>
+        <a href="#labs">Labs</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Syntavex Technologies. All rights reserved.</p>
+        <div class="status-indicator">
+          <span class="indicator-dot"></span>
+          <span>All systems operational &bull; Deployed on Heroku</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Interaction Logic -->
+  <script src="/js/app.js"></script>
+</body>
+</html>
