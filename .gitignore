@@ -49,3 +49,10 @@ build/
 .cache/
 .vercel
 .netlify
+
+# Agent and Local Tooling
+.agents/
+skills-lock.json
+.gemini/
+.antigravity/
+
