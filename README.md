@@ -120,10 +120,11 @@ Deploy as a Node.js web service pointing to:
 
 ## 📬 Contact & Inquiries
 
-- **Website**: [Syntavex](https://syntavex.com)
-- **Email**: [contact@syntavex.com](mailto:contact@syntavex.com)
+- **Website**: [Syntavex](https://syntavex.tech)
+- **Email**: [contact@syntavex.tech](mailto:contact@syntavex.tech)
 - **GitHub**: [@Deepbhalani1277](https://github.com/Deepbhalani1277)
 
 ---
 
 &copy; 2026 Syntavex Technologies. All rights reserved.
+

@@ -322,58 +322,124 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------
-  // 7. 1-Click Clipboard Copy with Feedback
+  // 7. Contact Email, Clipboard Copy & Client Chooser Modal
   // --------------------------------------------------
+  const targetEmail = 'contact@syntavex.tech';
   const copyBtn = document.getElementById('copy-email-btn');
   const copyBtnText = document.getElementById('copy-btn-text');
-  const targetEmail = 'contact@syntavex.com';
+  const sendEmailBtn = document.getElementById('send-email-btn');
+  const emailModal = document.getElementById('email-modal');
+  const closeEmailModal = document.getElementById('close-email-modal');
+  const emailModalBackdrop = document.getElementById('email-modal-backdrop');
+  const modalCopyBtn = document.getElementById('modal-copy-btn');
+  const modalCopyText = document.getElementById('modal-copy-text');
 
+  // Shared Clipboard Copy Function
+  async function copyEmailToClipboard(triggerButton, textLabelElement, successText, defaultText) {
+    let copied = false;
+
+    // Modern Clipboard API
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(targetEmail);
+        copied = true;
+      } catch (err) {
+        console.warn('Clipboard writeText failed, falling back:', err);
+      }
+    }
+
+    // Legacy fallback
+    if (!copied) {
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = targetEmail;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        copied = document.execCommand('copy');
+        document.body.removeChild(textarea);
+      } catch (err) {
+        console.error('Fallback clipboard copy failed:', err);
+      }
+    }
+
+    if (copied && textLabelElement) {
+      const originalText = defaultText || textLabelElement.textContent;
+      textLabelElement.textContent = successText || 'Copied to clipboard!';
+      if (triggerButton) {
+        triggerButton.style.backgroundColor = '#00FFB2';
+        triggerButton.style.color = '#05070A';
+        triggerButton.style.borderColor = '#00FFB2';
+      }
+
+      setTimeout(() => {
+        textLabelElement.textContent = originalText;
+        if (triggerButton) {
+          triggerButton.style.backgroundColor = '';
+          triggerButton.style.color = '';
+          triggerButton.style.borderColor = '';
+        }
+      }, 2500);
+    }
+  }
+
+  // Primary Copy Button in Card
   if (copyBtn && copyBtnText) {
-    let resetTimer = null;
+    copyBtn.addEventListener('click', () => {
+      copyEmailToClipboard(copyBtn, copyBtnText, 'Copied to clipboard!', 'Copy Address');
+    });
+  }
 
-    copyBtn.addEventListener('click', async () => {
-      let copied = false;
+  // Modal Interactive Controller
+  if (emailModal && sendEmailBtn) {
+    const openModal = () => {
+      emailModal.classList.add('active');
+      emailModal.setAttribute('aria-hidden', 'false');
+      sendEmailBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
 
-      // Modern Clipboard API
-      if (navigator.clipboard && window.isSecureContext) {
-        try {
-          await navigator.clipboard.writeText(targetEmail);
-          copied = true;
-        } catch (err) {
-          console.warn('Clipboard writeText failed, falling back:', err);
-        }
+    const closeModal = () => {
+      emailModal.classList.remove('active');
+      emailModal.setAttribute('aria-hidden', 'true');
+      sendEmailBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    sendEmailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+
+    if (closeEmailModal) {
+      closeEmailModal.addEventListener('click', closeModal);
+    }
+
+    if (emailModalBackdrop) {
+      emailModalBackdrop.addEventListener('click', closeModal);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && emailModal.classList.contains('active')) {
+        closeModal();
       }
+    });
 
-      // Legacy fallback
-      if (!copied) {
-        try {
-          const textarea = document.createElement('textarea');
-          textarea.value = targetEmail;
-          textarea.style.position = 'fixed';
-          textarea.style.opacity = '0';
-          document.body.appendChild(textarea);
-          textarea.select();
-          copied = document.execCommand('copy');
-          document.body.removeChild(textarea);
-        } catch (err) {
-          console.error('Fallback clipboard copy failed:', err);
-        }
-      }
+    // Secondary Copy button inside modal
+    if (modalCopyBtn && modalCopyText) {
+      modalCopyBtn.addEventListener('click', () => {
+        copyEmailToClipboard(modalCopyBtn, modalCopyText, 'Copied to clipboard!', `Copy ${targetEmail}`);
+      });
+    }
 
-      if (copied) {
-        copyBtnText.textContent = 'Copied to clipboard!';
-        copyBtn.style.backgroundColor = '#00FFB2';
-        copyBtn.style.color = '#05070A';
-
-        clearTimeout(resetTimer);
-        resetTimer = setTimeout(() => {
-          copyBtnText.textContent = 'Copy Address';
-          copyBtn.style.backgroundColor = '';
-          copyBtn.style.color = '';
-        }, 2500);
-      } else {
-        window.location.href = `mailto:${targetEmail}`;
-      }
+    // Close modal when user clicks one of the client links
+    const modalOptions = emailModal.querySelectorAll('.email-modal-option');
+    modalOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        setTimeout(closeModal, 300);
+      });
     });
   }
 });
